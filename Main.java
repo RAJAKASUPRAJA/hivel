@@ -117,7 +117,7 @@ public class Main {
 
         String json = readFile(filename);
 
-        // extract k
+        
         int pos = json.indexOf("\"k\"");
         pos = json.indexOf(":", pos) + 1;
         while (json.charAt(pos) == ' ' || json.charAt(pos) == '"') pos++;
@@ -125,10 +125,10 @@ public class Main {
         while (e < json.length() && Character.isDigit(json.charAt(e))) e++;
         int k = Integer.parseInt(json.substring(pos, e));
 
-        // read all data points
+        
         List<Integer> pts = getPointKeys(json);
 
-        // use first k points
+        
         double[][] A = new double[k][k];
         double[] Y = new double[k];
 
